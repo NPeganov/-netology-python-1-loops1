@@ -26,12 +26,12 @@
 """
 
 
-from co
+from common.didgital_input import digital_input
 
 if __name__ == '__main__':
     num = None
     result = int(0)
     while num != 0:
-        num = int(input('Enter the number: '))
+        num = digital_input('Enter the number: ')
         result += num
     print(f'Result: {result}')
