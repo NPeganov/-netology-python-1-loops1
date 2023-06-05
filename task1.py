@@ -19,11 +19,12 @@ t
 
 if __name__ == '__main__':
     word = input("Enter the word: ")
-    if len(word) % 2 == 1:
-        a = len(word) // 2
-        let = word[a]
+    length = len(word)
+    if length % 2 == 1:
+        a = length // 2
+        result = word[a]
     else:
-        a = len(word) // 2
-        let = word[a - 1:a + 1]
+        a = length // 2
+        result = word[a - 1:a + 1]
 
-    print(let)
+    print(result)
