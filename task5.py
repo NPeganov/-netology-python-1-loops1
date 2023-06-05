@@ -39,10 +39,10 @@ def average_views(stream):
     views_count = 0
     users = set()
 
-    for e in stream:
-        s = e.split(',')
-        views_count += int(s[2])
-        users.add(s[1])
+    for elem in stream:
+        string = elem.split(',')
+        views_count += int(string[2])
+        users.add(string[1])
 
     users_count = len(users)
 
