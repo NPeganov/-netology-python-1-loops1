@@ -20,11 +20,11 @@ t
 if __name__ == '__main__':
     word = input("Enter the word: ")
     length = len(word)
+    a = length // 2
+    result = None
     if length % 2 == 1:
-        a = length // 2
         result = word[a]
     else:
-        a = length // 2
         result = word[a - 1:a + 1]
 
     print(result)
