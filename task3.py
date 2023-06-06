@@ -29,22 +29,18 @@ if __name__ == '__main__':
     print('To stop entering boys\' names type "stop"!')
     boy_name = str()
     boys = set()
-    while True:
+    while boy_name.lower() == 'stop':
         boy_name = input('Enter the name of a boy: ')
-        if boy_name.lower() == 'stop':
-            break
-        else:
-            boys.add(boy_name)
+        boys.add(boy_name)
+        break
 
     print('To stop entering girls\' names type "stop"!')
     girl_name = str()
     girls = set()
-    while True:
+    while girl_name.lower() == 'stop':
         girl_name = input('Enter the name of a girl: ')
-        if girl_name.lower() == 'stop':
-            break
-        else:
-            girls.add(girl_name)
+        girls.add(girl_name)
+        break
 
     if len(girls) != len(boys):
         print("Attention, someone may be left without a pair!")
