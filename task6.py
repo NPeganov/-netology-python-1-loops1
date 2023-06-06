@@ -26,13 +26,13 @@
 import re
 
 
-def insert(input_string=None):
+def sorted_nums_repeating_more_than_once(input_string=None):
+    #Простите за длинное название функции, я знаю, что это плохо
     if not input_string:
         input_string = input("Enter numbers separated by a space: ")
 
-    regex1 = r'\D' # Ищем любые символы, кроме чисел и пробелов
+    regex1 = r'[^ \d]' # Ищем любые символы, кроме чисел и пробелов
     regex2 = r' {2,}' # Ищем 2 и более пробелов
-    match1 = match2 = True
 
     while True:
         # Если ничего, кроме одинарных пробелов и цифр не нашли, то ввод корректен
@@ -47,16 +47,18 @@ def insert(input_string=None):
 
     for number in unique_numbers:
         if raw_numbers.count(number) > 1:
-            result_string += "".join(f"{number} ")
+            # result_string += "".join(f"{number} ")
+            # Можно было сделать таким образом, и потом применить встроенный метод strip()
+    # return result_string.strip()
 
-    return result_string.strip()
+            if len(result_string) == 0:
+                result_string += "".join(number)
+            else:
+                result_string += "".join(f" {number}")
+
+    return result_string
 
 
 if __name__ == '__main__':
 
-    print(insert())
-
-    # if "1 2 15 200" == insert("10 15 15 103 200 200 200 1 1 1 1 1 2 2 2"):
-    #     print("Hooray")
-    # else:
-    #     print('Fail')
+    print(sorted_nums_repeating_more_than_once())
