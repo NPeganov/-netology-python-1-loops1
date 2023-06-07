@@ -48,7 +48,7 @@ def sorted_nums_repeating_more_than_once(input_string=None):
     for number in unique_numbers:
         if raw_numbers.count(number) > 1:
             # result_string += "".join(f"{number} ")
-            # Можно было сделать таким образом, и потом применить встроенный метод strip()
+            # Можно было сделать таким образом, а потом применить встроенный метод strip()
     # return result_string.strip()
 
             if len(result_string) == 0:
