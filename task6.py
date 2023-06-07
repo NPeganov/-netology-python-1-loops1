@@ -27,12 +27,12 @@ import re
 
 
 def sorted_nums_repeating_more_than_once(input_string=None):
-    #Простите за длинное название функции, я знаю, что это плохо
+    # Простите за длинное название функции, я знаю, что это плохо
     if not input_string:
         input_string = input("Enter numbers separated by a space: ")
 
-    regex1 = r'[^ \d]' # Ищем любые символы, кроме чисел и пробелов
-    regex2 = r' {2,}' # Ищем 2 и более пробелов
+    regex1 = r'[^ \d]'  # Ищем любые символы, кроме чисел и пробелов
+    regex2 = r' {2,}'  # Ищем 2 и более пробелов
 
     while True:
         # Если ничего, кроме одинарных пробелов и цифр не нашли, то ввод корректен
@@ -43,22 +43,15 @@ def sorted_nums_repeating_more_than_once(input_string=None):
 
     raw_numbers = input_string.split(" ")
     unique_numbers = sorted(set(input_string.split(" ")), key=int)
-    result_string = str()
+
+    repeated_numbers = list()
 
     for number in unique_numbers:
         if raw_numbers.count(number) > 1:
-            # result_string += "".join(f"{number} ")
-            # Можно было сделать таким образом, а потом применить встроенный метод strip()
-    # return result_string.strip()
+            repeated_numbers.append(f'{number}')
 
-            if len(result_string) == 0:
-                result_string += "".join(number)
-            else:
-                result_string += "".join(f" {number}")
-
-    return result_string
+    return ' '.join(repeated_numbers)
 
 
 if __name__ == '__main__':
-
     print(sorted_nums_repeating_more_than_once())
