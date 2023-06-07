@@ -24,23 +24,28 @@ girls = ['Kate', 'Liza', 'Kira', 'Emma', 'Trisha']
 Внимание, кто-то может остаться без пары!
 """
 
+STOP_NAME = 'stop'
 
 if __name__ == '__main__':
     print('To stop entering boys\' names type "stop"!')
     boy_name = str()
-    boys = set()
-    while boy_name.lower() != 'stop':
+    boys = set()  # Мы используем здесь set, чтобы исключить повторение имён
+    # В задании это явно не указано, но я сознательно решил ввести ограничение на уникальность имен
+
+    while boy_name.lower() != STOP_NAME:
         boy_name = input('Enter the name of a boy: ')
-        boys.add(boy_name)
-        break
+        boys.add(boy_name.lower())  # Мы используем здесь lower(), также чтобы исключить повторение имён
+
+    boys.remove(STOP_NAME)  # Для того, чтобы 'stop' не входило в итоговый список имён
 
     print('To stop entering girls\' names type "stop"!')
     girl_name = str()
     girls = set()
-    while girl_name.lower() != 'stop':
+    while girl_name.lower() != STOP_NAME:
         girl_name = input('Enter the name of a girl: ')
-        girls.add(girl_name)
-        break
+        girls.add(girl_name.lower())
+
+    girls.remove(STOP_NAME)
 
     if len(girls) != len(boys):
         print("Attention, someone may be left without a pair!")
